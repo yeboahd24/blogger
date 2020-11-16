@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <meta charset="utf-8" >
+    <meta lang="en" content="search">
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="../../static/main.css">
+        <title>Search{% if query %} Results{% endif %}</title>
+    </head>
+
+    <body style="background-image: hostel;">
+
+        <h1>Search</h1>
+        <form action="." method="GET">
+        <label for="q">Search:</label>
+        <input type="text" name="q" value="{{query|escape}}" >
+        <input type="submit" value="search">
+        </form>
+        {% if query %}
+        <h2>Results for Room {{query|escape}}:</h2>
+        {% if results %}
+        <ul>
+        {% for student in results %}
+        <li>Name: {{student.Name|escape}}</li>
+        <p><li><img style=widows:200px, height="200" src="{{student.Image.url}}"></li></p>
+        {% endfor %}
+        </ul>
+        {% else %}
+        <p>Student Not Found</p>
+        {% endif %}
+        {% endif %}
+        
+    </body>
+</html>

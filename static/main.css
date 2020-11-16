@@ -17,6 +17,7 @@ body {
 	font-size: 0.9em;
 	text-align: justify;
 	color: #474747;
+	background-image:url("../static/hostel.jpg");
 }
 #footer {
 	text-align: center;
